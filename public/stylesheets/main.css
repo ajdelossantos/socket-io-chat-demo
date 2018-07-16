@@ -1,11 +1,9 @@
-/* Lightweight reset */
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Main Styles */
 body {
   font: 13px Helvetica, Arial; 
 }
@@ -30,6 +28,10 @@ form button {
   background: rgb(130, 224, 255);
   border: none;
   padding: 10px;
+}
+
+.messages__container {
+  border: 1px dashed red;
 }
 
 #messages {
