@@ -68,14 +68,42 @@
 
   <div class="messages__container">
     <ul id="messages">
-      <li>hello world</li>
+      <li>Get to messaging below!</li>
     </ul>
   </div>
 
   <form action="">
-    <input id="m" autocomplete="off" />
+    <input id="m" autocomplete="off" placeholder="Type message here" />
     <button>Send</button>
   </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+    const socket = io();
+    const form = document.querySelector("form");
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const chatMessage = document.getElementById('m').value;
+      socket.emit('chat message', chatMessage)
+
+      document.getElementById('m').value = "";
+      return;
+    };
+
+    function appendMessage(e) {
+      const messageList = document.getElementById('messages');
+      const listItem = document.createElement('li');
+      listItem.innerHTML = e;
+
+      messageList.appendChild(listItem);
+      return;
+    }
+
+    form.addEventListener('submit', handleSubmit);
+    socket.on('chat message', appendMessage);
+  </script>
 
 </body>
 
