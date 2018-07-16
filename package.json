@@ -1,0 +1,17 @@
+{
+  "name": "socket-io-chat-app",
+  "version": "0.0.1",
+  "description": "A chat application built on Node.js and Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alvin James Delos Santos",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "eslint": "^5.1.0",
+    "express": "^4.16.3"
+  }
+}
